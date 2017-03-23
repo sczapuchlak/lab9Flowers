@@ -53,7 +53,6 @@ router.post('/addFlower', function(req, res, next){
     });
 });
 
-
 router.put('/updateColor', function(req, res, next) {
 
     var filter = { 'name' : req.body.name };
