@@ -13,7 +13,7 @@
 <P>Visit this flower's page at Wikipedia at the following link:
     <a href="{{flower.wiki}}">{{flower.wiki}}</a></P>
 
-<p><form action="/deleteFlower" method="POST"><button type ="submit" id="deleteButton">Delete this Flower</button></form></p>
+<p><form action="/deleteFlower" method="POST"><button type ="submit" id="deleteButton">Delete this Flower</button><input type="hidden" name="name" value="{{flower.name}}"></form></p>
 
 
 

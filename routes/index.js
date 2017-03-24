@@ -53,9 +53,8 @@ router.post('/addFlower', function(req, res, next){
     });
 });
 router.post('/deleteFlower', function (req, res, next) {
-    var filter = { 'name' : req.body.name };
-    req.db.collection('flowers').deleteOne(req.body,filter, function(err){
-        console.log("hello");
+    console.log(req.body);
+    req.db.collection('flowers').deleteOne(req.body, function(err){
 
         if (err){
             return next(err);
