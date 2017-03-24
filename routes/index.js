@@ -52,6 +52,16 @@ router.post('/addFlower', function(req, res, next){
         return res.redirect('/');
     });
 });
+router.post('/deleteFlower', function (req, res, next) {
+    var filter = { 'name' : req.body.name };
+    req.db.collection('flowers').deleteOne(req.body,filter, function(err){
+        console.log("hello");
+
+        if (err){
+            return next(err);
+        }
+        return res.redirect('/');
+    })});
 
 router.put('/updateColor', function(req, res, next) {
 
@@ -65,6 +75,7 @@ router.put('/updateColor', function(req, res, next) {
         return res.send({'color' : req.body.color})
     })
 });
+
 router.get('/details/:flower', function (req, res, next) {
     res.send('todo: page about' + req.params.flower);
 });

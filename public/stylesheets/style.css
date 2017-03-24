@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+#instructions {
+  font-style: italic;
+}
+
+#deleteButton{
+    color: red;
+
+}
