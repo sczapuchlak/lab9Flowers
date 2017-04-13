@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var hbs = require('express-handlebars');
 var assert = require('assert');
 var MongoClient = require('mongodb').MongoClient;
+var url = process.env.MONGO_URL;
 
 
 var index = require('./routes/index');
@@ -14,7 +15,7 @@ var users = require('./routes/users');
 
 var app = express();
 
-var url = 'mongodb://localhost:27017/garden';
+var url = process.env.MONGO_URL;
 MongoClient.connect(url , function(err, db){
     {  assert.equal(null, err);
         console.log('connected to MongoDB');
